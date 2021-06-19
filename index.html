@@ -8,6 +8,30 @@
 </head>
 <body>
   <h1>My BookStore</h1>
+  <form action="" class="main-form">
+    <div>
+      <label for="author">Author</label>
+      <input type="text" name="author" id="author">
+    </div>
+
+    <div>
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title">
+    </div>
+
+    <div>
+      <label for="number">Number of pages</label>
+      <input type="number" name="number" id="number">
+    </div>
+    <div>
+      <label for="status">Have you read this book?</label>
+      <select name="status" id="status">
+        <option value="Read">Read</option>
+        <option value="Unread" selected>Unread</option>
+      </select>
+    </div>
+    <button type="submit">Add Book</button>
+  </form>
   <script src="main.js"></script>
 </body>
 </html>
