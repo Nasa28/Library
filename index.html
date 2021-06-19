@@ -4,33 +4,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
   <title>Library</title>
 </head>
 <body>
-  <h1>My BookStore</h1>
-  <form action="" class="main-form">
-    <div>
+  <div class="container mt-4">
+  <h1 class = "display-4 text-center fw-bold">My BookStore</h1>
+  <form class="main-form">
+
+    <div class = "form-group">
       <label for="author">Author</label>
-      <input type="text" name="author" id="author">
+      <input type="text" name="author" id="author" class="form-control">
     </div>
 
-    <div>
+    <div class = "form-group">
       <label for="title">Title</label>
-      <input type="text" name="title" id="title">
+      <input type="text" name="title" id="title" class="form-control">
     </div>
 
-    <div>
+    <div class = "form-group">
       <label for="number">Number of pages</label>
-      <input type="number" name="number" id="number">
+      <input type="number" name="number" id="number" class = "form-control">
     </div>
-    <div>
-      <label for="status">Have you read this book?</label>
-      <select name="status" id="status">
+
+    <div class = form-group>
+      <label for="status"> book Status</label><br>
+      <select name="status" id="status"> 
         <option value="Read">Read</option>
         <option value="Unread" selected>Unread</option>
       </select>
     </div>
-    <button type="submit" value="submit">Add Book</button>
+    <div class="form-group">
+    <input type="submit" value="Add Book" class = "form-control">
+  </div>
   </form>
 
   <table class = "table">
@@ -43,6 +50,7 @@
       </tr>
     </thead>
   </table>
+</div>
   <script src="main.js"></script>
 </body>
 </html>
