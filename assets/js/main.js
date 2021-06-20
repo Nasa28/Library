@@ -90,5 +90,5 @@ document.addEventListener('DOMContentLoaded', displayBooks());
 add.addEventListener('click', () => {
   const myButton = document.getElementById('main-form');
   myButton.classList = 'newclass';
-  myButton.style = 'display:block; width:35%; margin: 30px auto';
+  myButton.style.cssText = 'display:block; width:35%; margin: 30px auto';
 });
