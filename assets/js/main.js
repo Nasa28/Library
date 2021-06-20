@@ -8,7 +8,7 @@ const add = document.getElementById('btn-main');
 const myLibrary = [];
 
 function getLibrary() {
-let books;
+  let books;
   if (localStorage.getItem('books') === null) {
     books = [];
   } else {
