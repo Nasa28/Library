@@ -3,7 +3,33 @@ const author = document.getElementById("author");
 const title = document.getElementById("title");
 const pages = document.getElementById("pages");
 const read = document.getElementById("status");
+const add = document.getElementById("btn-main");
+let books = getLibrary();
+let myLibrary = [];
 
+function addBook(book) {
+  books.push(book);
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
+function getLibrary(library) {
+  library = JSON.parse(localStorage.getItem('books'));
+return library;
+}
+
+function deleteBook(title) {
+  books.forEach((book, index) => {
+    if (book.title === title) {
+      books.splice(index, 1);
+    }
+  });
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
+function displayBooks() {
+  // loop through the books
+  books.forEach((book) => addBookToLibrary(book));
+}
 
 function removeBook(ele){
   if(ele.classList.contains("delete")){
@@ -16,7 +42,6 @@ function resetFields(){
   pages.value = ""
   read.value = ""
 }
-let myLibrary = [];
 
 function Book(author, title,pages, read) {
   this.author = author;
@@ -36,6 +61,7 @@ function addBookToLibrary(book) {
     <td id="status" class='textView'>${book.read}</td>
     <td><a href="#" class="delete text-danger text-decoration-none">Remove book</a></td>
     `
+    
     bookList.appendChild(row)
 }
 
@@ -48,10 +74,22 @@ document.getElementById("main-form").addEventListener('submit', (event)=>{
     pages.value,
     read.value
     )
-addBookToLibrary(book)
-resetFields()
+    myLibrary.push(addBookToLibrary(book))
+    addBook(book);
+    location.reload()
+    resetFields()
 });
 
 bookList.addEventListener("click", (e) => {
   removeBook(e.target)
+  deleteBook(e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent);
+})
+
+document.addEventListener('DOMContentLoaded', displayBooks());
+
+add.addEventListener('click', (event)=>{
+  
+myButton= document.getElementById("main-form")
+myButton.classList = "newclass"
+myButton.style = "display:block; width:50%; margin: 30px auto"
 })

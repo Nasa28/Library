@@ -9,45 +9,48 @@
   <title>Library</title>
 </head>
 <body>
-  <div class="container mt-4">
+  <div class="container mt-3">
+    <div id="btn-main">
+      <input type="button" value="Add Book" class = "fw-bold btn btn-primary">
+    </div>
   <h1 class = "display-4 text-center fw-bold">My BookStore</h1>
-  <form id="main-form">
+  <form id="main-form" class="mb-5 mx-auto col-4 d-none">
 
     <div class = "form-group">
       <label for="author">Author</label>
-      <input type="text" name="author" id="author" class="form-control" required>
+      <input type="text" name="author" id="author" class="form-control mb-3" required>
     </div>
 
     <div class = "form-group">
       <label for="title">Title</label>
-      <input type="text" name="title" id="title" class="form-control" required>
+      <input type="text" name="title" id="title" class="form-control mb-3" required>
     </div>
 
     <div class = "form-group">
       <label for="pages">Number of pages</label>
-      <input type="number" name="pages" id="pages" class = "form-control" required>
+      <input type="number" name="pages" id="pages" class = "form-control mb-3" required>
     </div>
 
-    <div class = form-group>
+    <div class = "form-group mb-3">
       <label for="status"> book Status</label><br>
-      <select name="status" id="status"> 
+      <select name="status" id="status" required> 
         <option value="Read">Read</option>
         <option value="Unread" selected>Unread</option>
       </select>
     </div>
     <div class="form-group">
-    <input type="submit" value="Add Book" class = "form-control btn btn-primary">
+    <input type="submit" value="Submit" class = "form-control fw-bold btn btn-primary">
   </div>
   </form>
 
-  <table class = "table">
-    <thead>
+  <table class = "table table-dark table-bordered text-center ">
+    <thead class="fw-bold text-uppercase">
       <tr>
         <th>Author</th>
         <th>Title</th>
         <th>Number Of Pages</th>
         <th>Read Status</th>
-        <th></th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody id="book-list"></tbody>
