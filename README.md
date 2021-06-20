@@ -16,7 +16,7 @@
 
 ## Live version
 
-You can check the live version in [this link]()
+You can check the live version in [this link](https://elastic-swirles-8b62fc.netlify.app/)
 
 ## Getting Started
 
