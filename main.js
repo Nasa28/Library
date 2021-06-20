@@ -58,7 +58,7 @@ function addBookToLibrary(book) {
     <td>${book.author}</td>
     <td>${book.title}</td>
     <td>${book.pages}</td>
-    <td id="status" class='textView'>${book.read}</td>
+    <td> <a href= "#" id="status" class='status text-decoration-none'>${book.read}</a></td>
     <td><a href="#" class="delete text-danger text-decoration-none">Remove book</a></td>
     `
     
