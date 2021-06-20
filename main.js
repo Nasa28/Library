@@ -91,5 +91,5 @@ add.addEventListener('click', (event)=>{
   
 myButton= document.getElementById("main-form")
 myButton.classList = "newclass"
-myButton.style = "display:block; width:50%; margin: 30px auto"
+myButton.style = "display:block; width:35%; margin: 30px auto"
 })
