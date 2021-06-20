@@ -7,9 +7,15 @@ const add = document.getElementById('btn-main');
 
 const myLibrary = [];
 
-function getLibrary(library) {
-  library = JSON.parse(localStorage.getItem('books'));
-  return library;
+function getLibrary() {
+let books;
+  if (localStorage.getItem('books') === null) {
+    books = [];
+  } else {
+    books = JSON.parse(localStorage.getItem('books'));
+  }
+
+  return books;
 }
 const books = getLibrary();
 
