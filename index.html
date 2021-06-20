@@ -11,7 +11,7 @@
 <body>
   <div class="container mt-4">
   <h1 class = "display-4 text-center fw-bold">My BookStore</h1>
-  <form class="main-form">
+  <form id="main-form">
 
     <div class = "form-group">
       <label for="author">Author</label>
@@ -36,7 +36,7 @@
       </select>
     </div>
     <div class="form-group">
-    <input type="submit" value="Add Book" class = "form-control">
+    <input type="submit" value="Add Book" class = "form-control btn btn-primary">
   </div>
   </form>
 
@@ -47,9 +47,10 @@
         <th>Title</th>
         <th>Number Of Pages</th>
         <th>Read Status</th>
+        <th></th>
       </tr>
     </thead>
-    <tbody class="book-list"></tbody>
+    <tbody id="book-list"></tbody>
   </table>
 </div>
   <script src="main.js"></script>

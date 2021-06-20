@@ -1,26 +1,48 @@
-const bookList = document.getElementsByClassName("book-list");
-const bookAuthor = document.getElementById("author");
-const bookTitle = document.getElementById("title");
-const bookPages = document.getElementById("pages");
-const bookStatus = document.getElementById("status");
+const bookList = document.getElementById("book-list");
+const author = document.getElementById("author");
+const title = document.getElementById("title");
+const pages = document.getElementById("pages");
+const read = document.getElementById("status");
 
+
+function resetFields(){
+  author.value = ""
+  title.value = ""
+  pages.value = ""
+  read.value = ""
+}
 let myLibrary = [];
 
-function Book(author, title,pages, status = "unread") {
+function Book(author, title,pages, read) {
   this.author = author;
   this.title = title;
   this.pages = pages;
-  this.status = status;
+  this.read = read;
 }
 
-function addBookToLibrary(event) {
-  event.preventDefault();
+function addBookToLibrary(book) {
+  // do stuff here
+  
+  const row = document.createElement('tr')
+  row.innerHTML = `
+    <td>${book.author}</td>
+    <td>${book.title}</td>
+    <td>${book.pages}</td>
+    <td id="status" class='textView'>${book.read}</td>
+    <td><a href="#" class="delete">Remove book</a></td>
+    `
+    bookList.appendChild(row)
+}
+
+document.getElementById("main-form").addEventListener('submit', (event)=>{
+  event.preventDefault()
+
   const book = new Book(
-    bookTitle.value,
-    bookAuthor.value,
-    bookPages.value,
-    bookStatus.value,
-  );
-
-  myLibrary.push(book);
-}
+    author.value, 
+    title.value, 
+    pages.value,
+    read.value
+    )
+addBookToLibrary(book)
+resetFields()
+});
