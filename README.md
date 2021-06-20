@@ -16,7 +16,7 @@
 
 ## Live version
 
-You can check the live version in [this link](https://elastic-swirles-8b62fc.netlify.app/)
+You can check the live version in [this link](https://nasa-library-app.netlify.app/)
 
 ## Getting Started
 
