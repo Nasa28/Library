@@ -5,6 +5,11 @@ const pages = document.getElementById("pages");
 const read = document.getElementById("status");
 
 
+function removeBook(ele){
+  if(ele.classList.contains("delete")){
+    ele.parentElement.parentElement.remove()
+  }
+}
 function resetFields(){
   author.value = ""
   title.value = ""
@@ -29,7 +34,7 @@ function addBookToLibrary(book) {
     <td>${book.title}</td>
     <td>${book.pages}</td>
     <td id="status" class='textView'>${book.read}</td>
-    <td><a href="#" class="delete">Remove book</a></td>
+    <td><a href="#" class="delete text-danger text-decoration-none">Remove book</a></td>
     `
     bookList.appendChild(row)
 }
@@ -46,3 +51,7 @@ document.getElementById("main-form").addEventListener('submit', (event)=>{
 addBookToLibrary(book)
 resetFields()
 });
+
+bookList.addEventListener("click", (e) => {
+  removeBook(e.target)
+})
