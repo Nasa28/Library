@@ -38,23 +38,26 @@ function removeBook(ele) {
     ele.parentElement.parentElement.remove();
   }
 }
-function resetFields() {
-  author.value = '';
-  title.value = '';
-  pages.value = '';
-  read.value = '';
+
+class Book {
+  constructor(author, title, pages, read) {
+    this.author = author;
+    this.title = title;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  static resetFields() {
+    author.value = '';
+    title.value = '';
+    pages.value = '';
+    read.value = '';
+  }
 }
 
-// function Book(author, title, pages, read) {
-//   this.author = author;
-//   this.title = title;
-//   this.pages = pages;
-//   this.read = read;
-// }
-
-const myBook = (author, title, pages, read) => ({
-  author, title, pages, read,
-});
+// const myBook = (author, title, pages, read) => ({
+//   author, title, pages, read,
+// });
 
 function addBookToLibrary(book) {
   const row = document.createElement('tr');
@@ -76,22 +79,25 @@ function displayBooks() {
 document.getElementById('main-form').addEventListener('submit', (event) => {
   event.preventDefault();
 
-  // const book = new Book(
-  //   author.value,
-  //   title.value,
-  //   pages.value,
-  //   read.value,
-  // );
-  const book = myBook(
+  const book = new Book(
     author.value,
     title.value,
     pages.value,
     read.value,
   );
+
+  // using factory function
+
+  // const book = myBook(
+  //   author.value,
+  //   title.value,
+  //   pages.value,
+  //   read.value,
+  // );
   myLibrary.push(addBookToLibrary(book));
   addBook(book);
   window.location.reload();
-  resetFields();
+  Book.resetFields();
 });
 
 bookList.addEventListener('click', (e) => {
