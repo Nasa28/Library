@@ -45,12 +45,16 @@ function resetFields() {
   read.value = '';
 }
 
-function Book(author, title, pages, read) {
-  this.author = author;
-  this.title = title;
-  this.pages = pages;
-  this.read = read;
-}
+// function Book(author, title, pages, read) {
+//   this.author = author;
+//   this.title = title;
+//   this.pages = pages;
+//   this.read = read;
+// }
+
+const myBook = (author, title, pages, read) => {
+    return { author, title, pages, read };
+};
 
 function addBookToLibrary(book) {
   const row = document.createElement('tr');
@@ -72,7 +76,13 @@ function displayBooks() {
 document.getElementById('main-form').addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const book = new Book(
+  // const book = new Book(
+  //   author.value,
+  //   title.value,
+  //   pages.value,
+  //   read.value,
+  // );
+  const book = myBook(
     author.value,
     title.value,
     pages.value,
