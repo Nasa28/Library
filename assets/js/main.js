@@ -52,9 +52,9 @@ function resetFields() {
 //   this.read = read;
 // }
 
-const myBook = (author, title, pages, read) => {
-    return { author, title, pages, read };
-};
+const myBook = (author, title, pages, read) => ({
+  author, title, pages, read,
+});
 
 function addBookToLibrary(book) {
   const row = document.createElement('tr');
