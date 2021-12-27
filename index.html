@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/styles.css">
+  <title>Library</title>
+</head>
+<body>
+  <div class="container mt-3">
+    <div id="btn-main">
+      <input type="button" value="Add Book" class = "fw-bold btn btn-primary">
+    </div>
+  <h1 class = "display-4 text-center fw-bold">My Library</h1>
+  <form id="main-form" class=" d-none">
+
+    <div class = "form-group">
+      <label for="author">Author</label>
+      <input type="text" name="author" id="author" class="form-control mb-3" required>
+    </div>
+
+    <div class = "form-group">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" class="form-control mb-3" required>
+    </div>
+
+    <div class = "form-group">
+      <label for="pages">Number of pages</label>
+      <input type="number" name="pages" id="pages" class = "form-control mb-3" required>
+    </div>
+
+    <div class = "form-group mb-3">
+      <label for="status"> book Status</label><br>
+      <select name="status" id="status" onclick="myFunction()" required> 
+        <option value="Read" id="read">Read</option>
+        <option value="Unread" id="read" selected>Unread</option>
+      </select>
+    </div>
+    <div class="form-group">
+    <input type="submit" value="Submit" class = "form-control fw-bold btn btn-primary">
+  </div>
+  </form>
+
+  <table class = "table table-dark table-bordered text-center mt-5 ">
+    <thead class="fw-bold text-uppercase">
+      <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Number Of Pages</th>
+        <th>Read Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="book-list"></tbody>
+  </table>
+</div>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
